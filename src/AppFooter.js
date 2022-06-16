@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import './AppFooter.css';
 
 export default class AppFooter extends Component {
 
@@ -7,7 +8,7 @@ export default class AppFooter extends Component {
         return(
             <Fragment>
                 <hr />
-                <p>Copyright &copy; { currnetYear } Acme Ltd,</p>
+                <p className='footer'>Copyright &copy; { currnetYear } Acme Ltd,</p>
             </Fragment>
 
         );
