@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 
 export default class AppContent extends Component {
 
+  constructor(props) {
+    super(props);
+    this.handlePostChange = this.handlePostChange.bind(this);
+  }
+
+  handlePostChange(posts) {
+    this.props.handlePostChange(posts);
+
+  }
+
   state = {posts: []}
 
   fetchList = () => {
@@ -9,6 +19,7 @@ export default class AppContent extends Component {
       .then(response => response.json())
       .then(json => {
         this.setState({posts: json});
+        this.handlePostChange(json);
       });
   }
 
